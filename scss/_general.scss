@@ -14,5 +14,12 @@ html {
 }
 
 .content {
-    padding-top: $header-height;
+  padding-top: $header-height;
+}
+
+.jumptarget:before {
+  content: "";
+  display: block;
+  height: $header-height;
+  margin: -$header-height 0 0;
 }

@@ -13,6 +13,12 @@ html {
 .content {
   padding-top: 60px; }
 
+.jumptarget:before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin: -60px 0 0; }
+
 .header {
   padding: 0 20px;
   height: 60px;
