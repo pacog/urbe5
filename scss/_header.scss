@@ -1,0 +1,30 @@
+.header {
+    padding: 0 $grid-l;
+    height: $header-height;
+    line-height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $soft-border;
+    background: white;
+}
+
+    .header-logo {
+        position: absolute;
+        top: $grid-l;
+        left: $grid-l;
+        background: url('../img/logo_urbe5.png') no-repeat;
+        background-size: contain;
+        width: 100px;
+        height: 20px;
+    }
+
+    .header-nav {
+        text-align: center;
+        
+    }
+        .header-nav-link {
+            padding: 0 $grid-m;
+            display: inline-block;
+        }

@@ -1,0 +1,16 @@
+.section {
+
+}
+
+    .section-title, .section-content {
+        max-width: 500px;
+        margin: $grid-l auto;
+    }
+
+    .section-title {
+        color: $green;
+    }
+
+    .section-content {
+
+    }
