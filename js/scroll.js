@@ -1,11 +1,15 @@
 (function() {
     'use strict';
 
+    var PARALLAX_SIZE = 80;
     var sections = [];
     var sectionsData = [];
     var sectionButtons = [];
     var sectionButtonsData = [];
     var currentSection = null;
+    var windowHeight = null;
+    var documentHeight = null;
+    var verticalParallaxElements;
 
     if(window.docReady) {
         window.docReady(init);
@@ -33,8 +37,10 @@
     }
 
     function onResize() {
+        storeWindowSize();
         storeSectionsData();
         storeSectionsButtonsData();
+        storeParallaxElements();
     }
 
     function storeSectionsData() {
@@ -65,11 +71,40 @@
         }
     }
 
+    function storeParallaxElements() {
+        verticalParallaxElements = document.querySelectorAll('.js-vertical-parallax');
+    }
+
     function onScroll() {
         var scrollTop = window.scrollY || window.pageYOffset || 0;
-        var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         var middleOfScreen = scrollTop + windowHeight/2;
+
         detectCurrentSection(middleOfScreen);
+        updateParallaxImages(scrollTop);
+    }
+
+    function storeWindowSize() {
+        var body = document.body;
+        var html = document.documentElement;
+        windowHeight = Math.max(html.clientHeight, window.innerHeight || 0);
+        documentHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+    }
+
+    function updateParallaxImages(scrollTop) {
+        if(verticalParallaxElements && documentHeight && (documentHeight - windowHeight > 0)) {
+            var percentage = scrollTop/(documentHeight - windowHeight);
+            for(var i=0; i<verticalParallaxElements.length; i++) {
+                setVerticalTranslate(verticalParallaxElements[i], -PARALLAX_SIZE*percentage);
+            }
+        }
+    }
+
+    function setVerticalTranslate(element, translate) {
+        var transformString = 'translateY(' + translate + 'px)';
+        element.style['-moz-transform'] = transformString;
+        element.style['-webkit-transform'] = transformString;
+        element.style['-ms-transform'] = transformString;
+        element.style['transform'] = transformString;
     }
 
     function detectCurrentSection(scrollTop) {

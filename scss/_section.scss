@@ -1,16 +1,18 @@
 .section {
-
+    margin-bottom: 100px;
 }
 
-    .section-title-content, .section-content {
+    .section-content {
         max-width: $max-content-width;
         margin: $grid-l auto;
+        margin-top: 2*$grid-l;
     }
 
     .section-title {
         position: relative;
         z-index: 10;
         height: $section-title-height;
+        overflow: hidden;
     }
         .section-title-content {
             width: 100%;
@@ -18,6 +20,8 @@
             position: relative;
             height: $section-title-height;
             left: -2*$grid-l;
+            margin: 0 auto;
+            max-width: $max-content-width;
         }
         .section-title-content-text {
             position: absolute;
@@ -33,7 +37,7 @@
         .section-title-background {
             position: absolute;
             top: 0;
-            bottom: 0;
+            bottom: -4*$grid-l;
             left: 0;
             right: 0;
             z-index: -1;

@@ -63,21 +63,28 @@ li {
   .header-nav-link.active {
     border-color: #71a83b; }
 
-.section-title-content, .section-content {
+.section {
+  margin-bottom: 100px; }
+
+.section-content {
   max-width: 500px;
-  margin: 20px auto; }
+  margin: 20px auto;
+  margin-top: 40px; }
 
 .section-title {
   position: relative;
   z-index: 10;
-  height: 160px; }
+  height: 160px;
+  overflow: hidden; }
 
 .section-title-content {
   width: 100%;
   max-width: 500px;
   position: relative;
   height: 160px;
-  left: -40px; }
+  left: -40px;
+  margin: 0 auto;
+  max-width: 500px; }
 
 .section-title-content-text {
   position: absolute;
@@ -95,7 +102,7 @@ li {
 .section-title-background {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: -80px;
   left: 0;
   right: 0;
   z-index: -1;
