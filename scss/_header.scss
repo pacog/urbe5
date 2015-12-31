@@ -1,3 +1,5 @@
+$header-link-height: 40px;
+
 .header {
     padding: 0 $grid-l;
     height: $header-height;
@@ -8,6 +10,7 @@
     right: 0;
     border-bottom: 1px solid $soft-border;
     background: white;
+    z-index: 20;
 }
 
     .header-logo {
@@ -27,4 +30,19 @@
         .header-nav-link {
             padding: 0 $grid-m;
             display: inline-block;
+            vertical-align: bottom;
+            text-decoration: none;
+            color: rgba($text-color, 0.8);
+            border-bottom: 3px solid rgba($soft-border, 0.8);
+            height: $header-link-height;
+            line-height: $header-link-height;
+
+            &:hover {
+                color: rgba($text-color, 1);
+                border-color: rgba($green, 0.8);
+            }
+
+            &.active {
+                border-color: $green;
+            }
         }

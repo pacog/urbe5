@@ -2,15 +2,55 @@
 
 }
 
-    .section-title, .section-content {
-        max-width: 500px;
+    .section-title-content, .section-content {
+        max-width: $max-content-width;
         margin: $grid-l auto;
     }
 
     .section-title {
-        color: $green;
+        position: relative;
+        z-index: 10;
+        height: $section-title-height;
     }
-
+        .section-title-content {
+            width: 100%;
+            max-width: $max-content-width;
+            position: relative;
+            height: $section-title-height;
+            left: -2*$grid-l;
+        }
+        .section-title-content-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: $grid-l 2*$grid-l;
+            padding-bottom: 0;
+            font-size: 40px;
+            background: rgba(255,255,255, 0.85);
+            @include linear-gradient(rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 0.9) 50%, rgba(255,255,255, 1) 100%);
+            color: $green;
+        }
+        .section-title-background {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .section-title-background-team {
+            background: url("../img/bg-5.jpg") no-repeat;
+            background-size: cover;
+        }
+        .section-title-background-services {
+            background: url("../img/bg-2.jpg") no-repeat;
+            background-size: cover;
+        }
+        .section-title-background-contact {
+            background: url("../img/inicio-bg.jpg") no-repeat;
+            background-size: cover;
+        }
     .section-content {
 
     }

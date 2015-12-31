@@ -2,13 +2,18 @@ html, body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  color: #222822; }
 
 html {
   box-sizing: border-box; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+li {
+  list-style-type: circle;
+  margin: 10px 0; }
 
 .content {
   padding-top: 60px; }
@@ -27,8 +32,9 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #cacaca;
-  background: white; }
+  border-bottom: 1px solid #cacfca;
+  background: white;
+  z-index: 20; }
 
 .header-logo {
   position: absolute;
@@ -44,11 +50,65 @@ html {
 
 .header-nav-link {
   padding: 0 10px;
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: bottom;
+  text-decoration: none;
+  color: rgba(34, 40, 34, 0.8);
+  border-bottom: 3px solid rgba(202, 207, 202, 0.8);
+  height: 40px;
+  line-height: 40px; }
+  .header-nav-link:hover {
+    color: #222822;
+    border-color: rgba(113, 168, 59, 0.8); }
+  .header-nav-link.active {
+    border-color: #71a83b; }
 
-.section-title, .section-content {
+.section-title-content, .section-content {
   max-width: 500px;
   margin: 20px auto; }
 
 .section-title {
+  position: relative;
+  z-index: 10;
+  height: 160px; }
+
+.section-title-content {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  height: 160px;
+  left: -40px; }
+
+.section-title-content-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 40px;
+  padding-bottom: 0;
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 50%, white 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 50%, white 100%);
   color: #71a83b; }
+
+.section-title-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.5; }
+
+.section-title-background-team {
+  background: url("../img/bg-5.jpg") no-repeat;
+  background-size: cover; }
+
+.section-title-background-services {
+  background: url("../img/bg-2.jpg") no-repeat;
+  background-size: cover; }
+
+.section-title-background-contact {
+  background: url("../img/inicio-bg.jpg") no-repeat;
+  background-size: cover; }

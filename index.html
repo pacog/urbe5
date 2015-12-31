@@ -22,17 +22,20 @@
   <header class="header">
     <div class="header-logo"></div>
     <nav class="header-nav">
-      <a class="header-nav-link" href="#inicio">Quiénes somos</a>
-      <a class="header-nav-link" href="#servicios">Servicios</a>
-      <a class="header-nav-link" href="#contacto">Contacto</a>
+      <a section-button="index" class="header-nav-link" href="#inicio">Quiénes somos</a>
+      <a section-button="services" class="header-nav-link" href="#servicios">Servicios</a>
+      <a section-button="contact" class="header-nav-link" href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <div class="content" id="inicio">
-    <section class="section" >
+    <section section="index" class="section" >
 
       <h2 class="section-title">
-        Quiénes somos
+        <div class="section-title-content">
+          <div class="section-title-content-text">Quiénes somos</div>
+        </div>
+        <div class="section-title-background section-title-background-team"></div>
       </h2>
 
       <div class="section-content">
@@ -42,9 +45,13 @@
       </div>
     </section>
 
-    <section class="section jumptarget" id="servicios">
+    <section section="services" class="section jumptarget" id="servicios">
+
       <h2 class="section-title">
-        Servicios
+        <div class="section-title-content">
+          <div class="section-title-content-text">Servicios</div>
+        </div>
+        <div class="section-title-background section-title-background-services"></div>
       </h2>
 
       <div class="section-content">
@@ -92,9 +99,13 @@
 
     </section>
 
-    <section class="section jumptarget" id="contacto">
+    <section section="contact" class="section jumptarget" id="contacto">
+
       <h2 class="section-title">
-        Contacto
+        <div class="section-title-content">
+          <div class="section-title-content-text">Contacto</div>
+        </div>
+        <div class="section-title-background section-title-background-contact"></div>
       </h2>
 
       <div class="section-content">
@@ -119,6 +130,9 @@
   
 
   <footer></footer>
+
+  <script type="text/javascript" src="js/docready.js"></script>
+  <script type="text/javascript" src="js/scroll.js"></script>
 
 </body>
 

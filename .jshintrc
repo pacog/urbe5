@@ -1,0 +1,14 @@
+{
+    "evil": true,
+    "regexdash": true,
+    "browser": true,
+    "wsh": true,
+    "trailing": true,
+    "sub": true,
+    "undef": true,
+    "unused": "vars",
+    "latedef": false,
+    "predef": [
+        "console"
+    ]
+}
