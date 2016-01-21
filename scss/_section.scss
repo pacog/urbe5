@@ -60,7 +60,15 @@
             background: url("../img/inicio-bg.jpg") no-repeat;
             background-size: cover;
         }
-    
+
+    .section-contact-social-links {
+        text-align: center;
+        .twitter-link, .facebook-link {
+            margin: $grid-l;
+            margin-bottom: 0;
+        }
+    }
+
     @media (max-width: 830px) {
         .section-content, .section-title {
             padding: 0 $grid-l;

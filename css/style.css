@@ -24,6 +24,19 @@ li {
   height: 60px;
   margin: -60px 0 0; }
 
+.twitter-link, .facebook-link {
+  display: inline-block;
+  height: 40px;
+  width: 40px; }
+
+.twitter-link {
+  background: url("../img/square-twitter.svg") no-repeat;
+  background-size: contain; }
+
+.facebook-link {
+  background: url("../img/square-facebook.svg") no-repeat;
+  background-size: contain; }
+
 .header {
   padding: 0 20px;
   padding-top: 60px;
@@ -121,6 +134,16 @@ li {
 
 .header-nav {
   text-align: center; }
+  .header-nav .twitter-link, .header-nav .facebook-link {
+    vertical-align: middle;
+    margin: 0 5px;
+    margin-bottom: -10px;
+    height: 30px;
+    width: 30px; }
+
+@media (max-width: 520px) {
+  .header-nav .twitter-link, .header-nav .facebook-link {
+    display: none; } }
 
 .header-nav-link {
   padding: 0 10px;
@@ -137,7 +160,7 @@ li {
   .header-nav-link.active {
     border-color: #71a83b; }
 
-@media (max-width: 830px) {
+@media (max-width: 870px) {
   .header {
     padding-left: 0;
     padding-right: 0; }
@@ -228,6 +251,12 @@ li {
 .section-title-background-contact {
   background: url("../img/inicio-bg.jpg") no-repeat;
   background-size: cover; }
+
+.section-contact-social-links {
+  text-align: center; }
+  .section-contact-social-links .twitter-link, .section-contact-social-links .facebook-link {
+    margin: 20px;
+    margin-bottom: 0; }
 
 @media (max-width: 830px) {
   .section-content, .section-title {

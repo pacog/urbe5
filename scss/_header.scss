@@ -78,8 +78,21 @@ $header-link-height: 40px;
 
     .header-nav {
         text-align: center;
-        
+        .twitter-link, .facebook-link {
+            vertical-align: middle;
+            margin: 0 $grid-s;
+            margin-bottom: -10px;
+            height: 3*$grid-m;
+            width: 3*$grid-m;
+        }
     }
+        @media (max-width: 520px) {
+            .header-nav {
+                .twitter-link, .facebook-link {
+                    display: none;
+                }
+            }
+        }
         .header-nav-link {
             padding: 0 $grid-m;
             display: inline-block;
@@ -100,7 +113,7 @@ $header-link-height: 40px;
             }
         }
 
-@media (max-width: 830px) {
+@media (max-width: 870px) {
     .header {
         padding-left: 0;
         padding-right: 0;

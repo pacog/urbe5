@@ -29,3 +29,17 @@ li {
   height: $header-height;
   margin: -$header-height 0 0;
 }
+
+.twitter-link, .facebook-link {
+  display: inline-block;
+  height: 2*$grid-l;
+  width: 2*$grid-l;
+}
+.twitter-link {
+  background: url("../img/square-twitter.svg") no-repeat;
+  background-size: contain;
+}
+.facebook-link {
+  background: url("../img/square-facebook.svg") no-repeat;
+  background-size: contain;
+}
