@@ -2,25 +2,76 @@ $header-link-height: 40px;
 
 .header {
     padding: 0 $grid-l;
-    height: $header-height;
+    padding-top: $header-height-while-big;
+    height: $header-height + $header-height-while-big;
     line-height: $header-height;
     position: fixed;
+    overflow: hidden;
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid $soft-border;
+    border-bottom: 1px solid transparent;
     background: white;
     z-index: 20;
+    @include transform(translateY(0));
+    @include transition-property(transform, border-color);
+    @include transition-duration(0.3s, 0.3s);
+    @include transition-timing-function(ease-in-out, ease-in-out);
+
+    &.is-scrolled {
+        @include transform(translateY( - $header-height-while-big));
+        border-color: $soft-border;
+    }
 }
+    .header-logo, .header-logo-small {
+        display: block;
+        @include transition-property(transform);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease-in-out, ease-in-out);
+    }
 
     .header-logo {
         position: absolute;
-        top: $grid-l;
-        left: $grid-l;
-        background: url('../img/logo_urbe5.png') no-repeat;
+        bottom: 20px;
+        left: 70px;
+        background: url('../img/logo_urbe_5_big.svg') no-repeat;
         background-size: contain;
-        width: 100px;
-        height: 20px;
+        width: 200px;
+        height: 79px;
+        
+
+        .is-scrolled & {
+            @include transform(translateY( - $header-height-while-big));
+        }
+    }
+        .header-logo-text {
+            text-decoration: none;
+            color: $text-color;
+            position: absolute;
+            left: 6px;
+            top: 100%;
+            line-height: 16px;
+            font-size: 14px;
+            margin-top: -$grid-m;
+
+            &:visited, &:hover, &:active {
+                text-decoration: none;
+                color: $text-color;
+            }
+        }
+    .header-logo-small {
+        position: absolute;
+        bottom: $grid-m;
+        left: 2*$grid-l;
+        background: url('../img/logo_urbe_5_small.svg') no-repeat;
+        background-size: contain;
+        width: 2*$grid-l;
+        height: 2*$grid-l;
+        @include transform(translateY($header-height-while-big));
+
+        .is-scrolled & {
+            @include transform(translateY(0));
+        }
     }
 
     .header-nav {

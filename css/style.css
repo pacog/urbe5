@@ -16,7 +16,7 @@ li {
   margin: 10px 0; }
 
 .content {
-  padding-top: 60px; }
+  padding-top: 140px; }
 
 .jumptarget:before {
   content: "";
@@ -26,24 +26,98 @@ li {
 
 .header {
   padding: 0 20px;
-  height: 60px;
+  padding-top: 60px;
+  height: 120px;
   line-height: 60px;
   position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #cacfca;
+  border-bottom: 1px solid transparent;
   background: white;
-  z-index: 20; }
+  z-index: 20;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-property: -webkit-transform, border-color;
+  -moz-transition-property: -moz-transform, border-color;
+  transition-property: transform, border-color;
+  -webkit-transition-duration: 0.3s, 0.3s;
+  -moz-transition-duration: 0.3s, 0.3s;
+  transition-duration: 0.3s, 0.3s;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out;
+  -moz-transition-timing-function: ease-in-out, ease-in-out;
+  transition-timing-function: ease-in-out, ease-in-out; }
+  .header.is-scrolled {
+    -webkit-transform: translateY(-60px);
+    -moz-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
+    -o-transform: translateY(-60px);
+    transform: translateY(-60px);
+    border-color: #cacfca; }
+
+.header-logo, .header-logo-small {
+  display: block;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out;
+  -moz-transition-timing-function: ease-in-out, ease-in-out;
+  transition-timing-function: ease-in-out, ease-in-out; }
 
 .header-logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  background: url("../img/logo_urbe5.png") no-repeat;
+  bottom: 20px;
+  left: 70px;
+  background: url("../img/logo_urbe_5_big.svg") no-repeat;
   background-size: contain;
-  width: 100px;
-  height: 20px; }
+  width: 200px;
+  height: 79px; }
+  .is-scrolled .header-logo {
+    -webkit-transform: translateY(-60px);
+    -moz-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
+    -o-transform: translateY(-60px);
+    transform: translateY(-60px); }
+
+.header-logo-text {
+  text-decoration: none;
+  color: #222822;
+  position: absolute;
+  left: 6px;
+  top: 100%;
+  line-height: 16px;
+  font-size: 14px;
+  margin-top: -10px; }
+  .header-logo-text:visited, .header-logo-text:hover, .header-logo-text:active {
+    text-decoration: none;
+    color: #222822; }
+
+.header-logo-small {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  background: url("../img/logo_urbe_5_small.svg") no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: translateY(60px);
+  -moz-transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -o-transform: translateY(60px);
+  transform: translateY(60px); }
+  .is-scrolled .header-logo-small {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); }
 
 .header-nav {
   text-align: center; }

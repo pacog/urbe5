@@ -20,7 +20,7 @@ li {
 }
 
 .content {
-  padding-top: $header-height;
+  padding-top: $header-height-while-big + $header-height + $grid-l;
 }
 
 .jumptarget:before {

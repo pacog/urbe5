@@ -2,7 +2,10 @@
     'use strict';
 
     var PARALLAX_SIZE = 150;
+    var HEADER_SCROLL_LIMIT = 50;
+    var HEADER_SCROLLED_CLASS = 'is-scrolled';
     var sections = [];
+    var headerElement = null;
     var sectionsData = [];
     var sectionButtons = [];
     var sectionButtonsData = [];
@@ -34,6 +37,7 @@
     function storeElements() {
         sections = document.querySelectorAll('[section]');
         sectionButtons = document.querySelectorAll('[section-button]');
+        headerElement = document.querySelector('.js-header');
     }
 
     function onResize() {
@@ -81,6 +85,18 @@
 
         detectCurrentSection(middleOfScreen);
         updateParallaxImages(scrollTop);
+        updateHeader(scrollTop);
+    }
+
+    function updateHeader(scrollTop) {
+        if(headerElement) {
+            if(scrollTop > HEADER_SCROLL_LIMIT) {
+                addClass(headerElement, HEADER_SCROLLED_CLASS);
+            } else {
+                removeClass(headerElement, HEADER_SCROLLED_CLASS);
+            }
+            
+        }
     }
 
     function storeWindowSize() {
