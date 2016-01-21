@@ -1,0 +1,21 @@
+.obra {
+    margin-bottom: 2*$grid-l;
+    border-left: 1px solid $soft-border;
+}
+
+    .obra-imagen {
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .obra-titulo {
+        padding-left: $grid-l;
+        margin: $grid-s 0;
+    }
+
+    .obra-descripcion {
+        padding-left: $grid-l;
+        margin-top: $grid-s;
+    }
