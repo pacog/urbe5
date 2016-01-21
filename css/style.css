@@ -137,6 +137,36 @@ li {
   .header-nav-link.active {
     border-color: #71a83b; }
 
+@media (max-width: 830px) {
+  .header {
+    padding-left: 0;
+    padding-right: 0; }
+  .header-logo {
+    position: absolute;
+    bottom: auto;
+    top: 10px;
+    left: 50%;
+    margin-left: -100px; }
+  .header-logo-text {
+    display: none; }
+  .header-logo-small {
+    position: absolute;
+    bottom: 30px;
+    height: 20px;
+    left: 50%;
+    margin-left: -20px;
+    -webkit-transform: translateY(120px);
+    -moz-transform: translateY(120px);
+    -ms-transform: translateY(120px);
+    -o-transform: translateY(120px);
+    transform: translateY(120px); }
+  .header-nav {
+    white-space: nowrap; }
+  .header-nav-link {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px; } }
+
 .section {
   margin-bottom: 100px; }
 
@@ -191,6 +221,14 @@ li {
   background: url("../img/bg-2.jpg") no-repeat;
   background-size: cover; }
 
+.section-title-background-obras {
+  background: url("../img/bg-3.jpg") no-repeat;
+  background-size: cover; }
+
 .section-title-background-contact {
   background: url("../img/inicio-bg.jpg") no-repeat;
   background-size: cover; }
+
+@media (max-width: 830px) {
+  .section-content, .section-title {
+    padding: 0 20px; } }

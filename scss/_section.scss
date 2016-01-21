@@ -52,10 +52,17 @@
             background: url("../img/bg-2.jpg") no-repeat;
             background-size: cover;
         }
+        .section-title-background-obras {
+            background: url("../img/bg-3.jpg") no-repeat;
+            background-size: cover;
+        }
         .section-title-background-contact {
             background: url("../img/inicio-bg.jpg") no-repeat;
             background-size: cover;
         }
-    .section-content {
-
+    
+    @media (max-width: 830px) {
+        .section-content, .section-title {
+            padding: 0 $grid-l;
+        }
     }

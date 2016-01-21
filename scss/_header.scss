@@ -44,6 +44,8 @@ $header-link-height: 40px;
             @include transform(translateY( - $header-height-while-big));
         }
     }
+
+
         .header-logo-text {
             text-decoration: none;
             color: $text-color;
@@ -97,3 +99,36 @@ $header-link-height: 40px;
                 border-color: $green;
             }
         }
+
+@media (max-width: 830px) {
+    .header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .header-logo {
+        position: absolute;
+        bottom: auto;
+        top: 10px;
+        left: 50%;
+        margin-left: -100px;
+    }
+        .header-logo-text {
+            display: none;
+        }
+    .header-logo-small {
+        position: absolute;
+        bottom: 30px;
+        height: 20px;
+        left: 50%;
+        margin-left: -$grid-l;
+        @include transform(translateY(2*$header-height-while-big));
+    }
+    .header-nav {
+        white-space: nowrap;
+    }
+        .header-nav-link {
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+        }
+}
