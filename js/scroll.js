@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var PARALLAX_SIZE = 80;
+    var PARALLAX_SIZE = 150;
     var sections = [];
     var sectionsData = [];
     var sectionButtons = [];

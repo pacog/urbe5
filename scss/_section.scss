@@ -13,6 +13,8 @@
         z-index: 10;
         height: $section-title-height;
         overflow: hidden;
+        margin: 0 auto;
+        max-width: $max-titles-width;
     }
         .section-title-content {
             width: 100%;
@@ -21,7 +23,6 @@
             height: $section-title-height;
             left: -2*$grid-l;
             margin: 0 auto;
-            max-width: $max-content-width;
         }
         .section-title-content-text {
             position: absolute;
@@ -37,7 +38,7 @@
         .section-title-background {
             position: absolute;
             top: 0;
-            bottom: -4*$grid-l;
+            bottom: -150px;
             left: 0;
             right: 0;
             z-index: -1;

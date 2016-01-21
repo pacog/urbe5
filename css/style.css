@@ -75,7 +75,9 @@ li {
   position: relative;
   z-index: 10;
   height: 160px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 800px; }
 
 .section-title-content {
   width: 100%;
@@ -83,8 +85,7 @@ li {
   position: relative;
   height: 160px;
   left: -40px;
-  margin: 0 auto;
-  max-width: 500px; }
+  margin: 0 auto; }
 
 .section-title-content-text {
   position: absolute;
@@ -102,7 +103,7 @@ li {
 .section-title-background {
   position: absolute;
   top: 0;
-  bottom: -80px;
+  bottom: -150px;
   left: 0;
   right: 0;
   z-index: -1;
