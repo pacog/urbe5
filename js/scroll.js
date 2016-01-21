@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var PARALLAX_SIZE = 150;
+    var PARALLAX_SIZE = 80;
     var HEADER_SCROLL_LIMIT = 50;
     var HEADER_SCROLLED_CLASS = 'is-scrolled';
     var sections = [];
@@ -76,7 +76,14 @@
     }
 
     function storeParallaxElements() {
-        verticalParallaxElements = document.querySelectorAll('.js-vertical-parallax');
+        verticalParallaxElements = [];
+        var elements = document.querySelectorAll('.js-vertical-parallax');
+        for(var i=0; i < elements.length; i++) {
+            verticalParallaxElements.push({
+                element: elements[i],
+                offsetTop: elements[i].offsetParent.offsetTop
+            });
+        }
     }
 
     function onScroll() {
@@ -108,11 +115,22 @@
 
     function updateParallaxImages(scrollTop) {
         if(verticalParallaxElements && documentHeight && (documentHeight - windowHeight > 0)) {
-            var percentage = scrollTop/(documentHeight - windowHeight);
             for(var i=0; i<verticalParallaxElements.length; i++) {
-                setVerticalTranslate(verticalParallaxElements[i], -PARALLAX_SIZE*percentage);
+                var parallaxToApply = getParallaxToApply(scrollTop, verticalParallaxElements[i]);
+                setVerticalTranslate(verticalParallaxElements[i].element, parallaxToApply);
             }
         }
+    }
+
+    function getParallaxToApply(scrollTop, element) {
+        var percentage = (element.offsetTop - scrollTop)/(windowHeight);
+        if(percentage < 0) {
+            percentage = 0;
+        }
+        if(percentage > 1) {
+            percentage = 1;
+        }
+        return PARALLAX_SIZE*percentage;
     }
 
     function setVerticalTranslate(element, translate) {
