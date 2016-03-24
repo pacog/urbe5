@@ -134,7 +134,7 @@
     }
 
     function setVerticalTranslate(element, translate) {
-        var transformString = 'translateY(' + translate + 'px)';
+        var transformString = 'translate3d(0,' + translate + 'px,0)';
         element.style['-moz-transform'] = transformString;
         element.style['-webkit-transform'] = transformString;
         element.style['-ms-transform'] = transformString;

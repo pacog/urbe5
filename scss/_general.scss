@@ -43,3 +43,30 @@ li {
   background: url("../img/square-facebook.svg") no-repeat;
   background-size: contain;
 }
+
+.two-columns {
+  @include flexbox;
+
+  .column {
+    @include flex(1);
+    margin-left: $grid-s;
+    margin-right: $grid-s;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+@media (max-width: 650px) {
+  .two-columns {
+    display: block;
+  }
+
+  .two-columns .column {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}

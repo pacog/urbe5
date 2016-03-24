@@ -1,21 +1,30 @@
-.obra {
-    margin-bottom: 2*$grid-l;
-    border-left: 1px solid $soft-border;
+.obras-container {
 }
+    .obra {
+        margin-bottom: $grid-m;
+    }
 
-    .obra-imagen {
-
-        img {
-            max-width: 100%;
+        .obra-imagen {
+            position: relative;
+            img {
+                display: block;
+                max-width: 100%;
+            }
         }
-    }
 
-    .obra-titulo {
-        padding-left: $grid-l;
-        margin: $grid-s 0;
-    }
+            .obra-titulo {
+                padding: $grid-s $grid-m;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                color: $text-color;
+                font-size: 12px;
+                background: rgba(255,255,255, 0.8);
+                margin: 0;
+                margin-bottom: $grid-s;
+            }
 
-    .obra-descripcion {
-        padding-left: $grid-l;
-        margin-top: $grid-s;
-    }
+        .obra-descripcion {
+            padding-left: $grid-l;
+            margin-top: $grid-s;
+        }
